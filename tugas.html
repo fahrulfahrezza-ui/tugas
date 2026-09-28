@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Website profil resmi SMK Negeri 1 Sumenep — informasi sekolah, program keahlian, prestasi, berita, galeri, dan PPDB." />
+  <title>SMKN 1 Sumenep — Sekolah Vokasi Unggul</title>
+  <link rel="icon" type="image/jpeg" href="assets/logo-smkn1-sumenep.jpeg" />
+  <style>
+    :root {
+      --green-950:#123b1f;
+      --green-900:#174d28;
+      --green-800:#1e6533;
+      --green-700:#278044;
+      --green-500:#4cae5c;
+      --lime:#b8d95b;
+      --yellow:#f6d84a;
+      --blue:#168bcb;
+      --red:#b93a3a;
+      --ink:#122118;
+      --muted:#65716a;
+      --paper:#f7f8f5;
+      --white:#fff;
+      --shadow:0 18px 45px rgba(19,59,31,.12);
+      --radius:22px;
+    }
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    button,input,textarea,select{font:inherit}
+    .container{width:min(1180px,92%);margin:auto}
+    .topbar{background:var(--green-950);color:#eaf6ed;font-size:13px}
+    .topbar .inner{display:flex;justify-content:space-between;gap:20px;padding:8px 0}
+    header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid #e7ece7}
+    .nav{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand img{width:50px;height:50px;object-fit:contain;border-radius:12px}
+    .brand small{display:block;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.02em}
+    .menu{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:700}
+    .menu a{color:#29402f}
+    .menu a:hover{color:var(--green-700)}
+    .nav-cta{background:var(--green-800);color:#fff!important;padding:11px 17px;border-radius:999px}
+    .mobile-toggle{display:none;background:none;border:0;font-size:28px;color:var(--green-900)}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--green-950),var(--green-800));color:#fff}
+    .hero:after{content:"";position:absolute;inset:auto -12% -38% -12%;height:280px;background:rgba(255,255,255,.05);border-radius:50%}
+    .hero .container{position:relative;z-index:2;padding:84px 0 88px}
+    .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:50px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:rgba(255,255,255,.07);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    h1{font-size:clamp(42px,6vw,72px);line-height:1.05;margin:18px 0 20px;letter-spacing:-.04em}
+    .hero p{font-size:18px;color:#d9ebde;max-width:700px;margin:0 0 30px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:999px;border:1px solid transparent;font-weight:800;transition:.2s;cursor:pointer}
+    .btn-primary{background:var(--yellow);color:#17240f}
+    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.04)}
+    .btn-outline{border-color:rgba(255,255,255,.35);color:#fff;background:rgba(255,255,255,.05)}
+    .btn-outline:hover{background:#fff;color:var(--green-900)}
+    .hero-card{background:#fff;color:var(--ink);padding:26px;border-radius:28px;box-shadow:var(--shadow)}
+    .hero-logo{display:flex;align-items:center;gap:15px;padding-bottom:18px;border-bottom:1px solid #ebefeb}
+    .hero-logo img{width:72px;height:72px;object-fit:contain}
+    .hero-card h3{margin:0 0 3px;font-size:20px}
+    .hero-card p{margin:0;color:var(--muted);font-size:13px}
+    .stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+    .stat{background:var(--paper);border-radius:18px;padding:16px}
+    .stat strong{display:block;font-size:27px;color:var(--green-800)}
+    .stat span{font-size:12px;color:var(--muted)}
+    section{padding:84px 0}
+    .section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:34px}
+    .section-head .kicker{font-size:12px;font-weight:900;color:var(--green-700);text-transform:uppercase;letter-spacing:.12em}
+    .section-head h2{font-size:clamp(30px,4vw,46px);margin:7px 0 0;line-height:1.1;letter-spacing:-.03em}
+    .section-head p{margin:0;max-width:580px;color:var(--muted)}
+    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:34px}
+    .panel{background:var(--paper);border:1px solid #e9eee8;border-radius:var(--radius);padding:30px}
+    .panel h3{margin:0 0 12px}
+    .panel p{color:var(--muted);margin:0}
+    .vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+    .vm{background:#fff;border-radius:18px;padding:18px;border:1px solid #e8eee8}
+    .vm strong{display:block;margin-bottom:6px;color:var(--green-900)}
+    .quote{font-size:20px;font-weight:800;line-height:1.4;color:var(--green-950)}
+    .principal{display:grid;grid-template-columns:92px 1fr;gap:18px;align-items:center;margin-top:22px}
+    .principal .avatar{width:92px;height:92px;border-radius:24px;background:linear-gradient(135deg,var(--green-700),var(--lime));display:grid;place-items:center;color:white;font-size:26px;font-weight:900}
+    .principal strong{display:block}
+    .principal span{color:var(--muted);font-size:13px}
+    .program-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .program-card{background:#fff;border:1px solid #e7ece7;border-radius:20px;padding:22px;transition:.22s;position:relative;overflow:hidden}
+    .program-card:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--green-800),var(--yellow))}
+    .program-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .program-icon{font-size:30px;width:56px;height:56px;border-radius:17px;background:#eff7ec;display:grid;place-items:center;margin-bottom:15px}
+    .program-card h3{font-size:18px;margin:0 0 8px;line-height:1.25}
+    .program-card p{color:var(--muted);font-size:13px;margin:0 0 15px}
+    .link-btn{border:0;background:none;color:var(--green-700);font-weight:800;padding:0;cursor:pointer}
+    .feature-band{background:var(--green-950);color:#fff}
+    .feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .feature{border:1px solid rgba(255,255,255,.13);border-radius:20px;padding:22px;background:rgba(255,255,255,.05)}
+    .feature b{display:block;font-size:19px;margin:10px 0 4px}
+    .feature span{font-size:13px;color:#c9dbce}
+    .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .news-card{border:1px solid #e8ede8;border-radius:20px;overflow:hidden;background:#fff}
+    .news-image{height:190px;background:linear-gradient(135deg,#dcefe0,#f8eaa4);display:grid;place-items:center;overflow:hidden}
+    .news-image img{width:100%;height:100%;object-fit:cover}
+    .news-card .content{padding:20px}
+    .tag{display:inline-block;padding:6px 9px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;background:#eef7ed;color:var(--green-800)}
+    .tag.red{background:#fff0ef;color:var(--red)}
+    .news-card h3{margin:10px 0 8px;font-size:18px;line-height:1.3}
+    .news-card p{color:var(--muted);font-size:13px;margin:0}
+    .date{font-size:11px;color:#87928b;margin-top:13px;display:block}
+    .agenda-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .agenda-item{display:flex;gap:16px;padding:20px;border:1px solid #e8ede8;border-radius:18px}
+    .date-box{min-width:64px;height:68px;border-radius:16px;background:var(--green-800);color:#fff;display:grid;place-items:center;text-align:center}
+    .date-box strong{font-size:24px;line-height:1}
+    .date-box span{font-size:10px;font-weight:800}
+    .agenda-item h3{margin:0 0 5px;font-size:17px}
+    .agenda-item p{margin:0;color:var(--muted);font-size:13px}
+    .gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-auto-rows:220px;gap:14px}
+    .gallery figure{margin:0;border-radius:20px;overflow:hidden;position:relative;cursor:pointer;border:1px solid #e7ece7}
+    .gallery figure:first-child{grid-row:span 2}
+    .gallery img{width:100%;height:100%;object-fit:cover}
+    .gallery figcaption{position:absolute;left:12px;right:12px;bottom:12px;padding:10px 12px;border-radius:12px;background:rgba(0,0,0,.5);color:#fff;font-size:12px;font-weight:700}
+    .ppdb{background:linear-gradient(135deg,#eef8e8,#f8f5dc)}
+    .ppdb-grid{display:grid;grid-template-columns:1fr .95fr;gap:28px;align-items:stretch}
+    .ppdb .panel{background:#fff}
+    .check-list{display:grid;gap:10px;margin:18px 0}
+    .check{display:flex;gap:10px;align-items:flex-start}
+    .check i{width:24px;height:24px;border-radius:50%;background:var(--green-800);color:#fff;display:grid;place-items:center;font-style:normal;font-size:13px;flex:none}
+    .contact-grid{display:grid;grid-template-columns:1fr .9fr;gap:24px}
+    .contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+    .contact-card{border:1px solid #e7ece7;border-radius:18px;padding:18px}
+    .contact-card strong{display:block;margin-bottom:5px}
+    .contact-card span{font-size:13px;color:var(--muted)}
+    .map-box{min-height:310px;border-radius:22px;background:linear-gradient(135deg,#edf5ee,#d7e6dc);display:grid;place-items:center;text-align:center;padding:25px;border:1px solid #dde8df}
+    .map-box div{max-width:320px}
+    footer{background:#0d2d18;color:#d7e9dc;padding:52px 0 20px}
+    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:28px}
+    footer h4{color:#fff;margin:0 0 12px}
+    footer p,footer li{font-size:13px;color:#b6cabd}
+    footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+    .footer-brand{display:flex;gap:12px;align-items:center}
+    .footer-brand img{width:54px;height:54px;object-fit:contain;background:#fff;border-radius:14px}
+    .footer-bottom{margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:20px;font-size:12px;color:#9ab3a1}
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.58);display:none;align-items:center;justify-content:center;padding:20px;z-index:100}
+    .modal.open{display:flex}
+    .modal-card{width:min(680px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:24px;padding:26px;position:relative}
+    .modal-close{position:absolute;right:16px;top:14px;border:0;background:#eef3ee;width:36px;height:36px;border-radius:50%;font-size:20px;cursor:pointer}
+    .modal-card h3{margin:0 0 10px;font-size:26px}
+    .modal-card p{color:var(--muted)}
+    .modal-card .detail-box{background:var(--paper);border-radius:18px;padding:18px;margin-top:16px}
+    form{display:grid;gap:13px}
+    label{font-size:13px;font-weight:800}
+    input,textarea,select{width:100%;padding:12px 13px;border:1px solid #dce6dd;border-radius:12px;outline:none;background:#fff}
+    textarea{min-height:100px;resize:vertical}
+    input:focus,textarea:focus,select:focus{border-color:var(--green-500);box-shadow:0 0 0 4px rgba(76,174,92,.1)}
+    .success{display:none;padding:12px 14px;border-radius:12px;background:#edf9eb;color:#246735;font-size:13px;font-weight:700}
+    .success.show{display:block}
+    .to-top{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border:0;border-radius:50%;background:var(--green-800);color:#fff;display:none;cursor:pointer;z-index:30;box-shadow:var(--shadow)}
+    .to-top.show{display:block}
+    .search-row{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+    .search-row input{max-width:390px}
+    .filter-note{color:var(--muted);font-size:13px}
+    @media (max-width: 980px){
+      .menu{display:none;position:absolute;left:0;right:0;top:76px;background:#fff;padding:18px 4%;border-bottom:1px solid #e7ece7;box-shadow:0 16px 25px rgba(0,0,0,.08);flex-direction:column;align-items:flex-start;gap:15px}
+      .menu.open{display:flex}.mobile-toggle{display:block}.hero-grid,.about-grid,.ppdb-grid,.contact-grid{grid-template-columns:1fr}.program-grid{grid-template-columns:repeat(2,1fr)}.feature-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.hero-card{max-width:620px}
+    }
+    @media (max-width: 680px){
+      .topbar .inner{justify-content:center;text-align:center}.topbar .inner span:last-child{display:none}
+      .hero .container{padding:64px 0}.hero p{font-size:16px}.program-grid,.feature-grid,.news-grid,.agenda-grid,.contact-cards,.vm-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:180px}.gallery figure:first-child{grid-row:span 1;grid-column:span 2}.section-head{display:block}.section-head p{margin-top:10px}.footer-grid{grid-template-columns:1fr}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:8px}.brand img{width:44px;height:44px}.brand div{font-size:14px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container inner"><span>SMKN 1 Sumenep • Sekolah Vokasi untuk Generasi Kreatif & Kompeten</span><span>Menu utama tersedia 24/7 melalui website</span></div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a href="#beranda" class="brand">
+        <img src="assets/logo-smkn1-sumenep.jpeg" alt="Logo SMKN 1 Sumenep" />
+        <div>SMKN 1 SUMENEP<small>Sekolah Menengah Kejuruan</small></div>
+      </a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Buka menu">☰</button>
+      <nav class="menu" id="menu">
+        <a href="#profil">Profil</a>
+        <a href="#jurusan">Jurusan</a>
+        <a href="#berita">Berita</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#kontak">Kontak</a>
+        <a href="#ppdb" class="nav-cta">Daftar PPDB</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">🎓 SMK Negeri 1 Sumenep</span>
+          <h1>Bangun Kompetensi. Ciptakan Masa Depan.</h1>
+          <p>Website terpadu untuk mengenal SMKN 1 Sumenep, memilih program keahlian, mengikuti berita dan prestasi sekolah, serta mendapatkan akses informasi PPDB dalam satu tempat.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#ppdb">Daftar PPDB</a>
+            <a class="btn btn-outline" href="#jurusan">Jelajahi Jurusan</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <div class="hero-logo">
+            <img src="assets/logo-smkn1-sumenep.jpeg" alt="Logo sekolah" />
+            <div><h3>SMKN 1 Sumenep</h3><p>Pendidikan kejuruan • Kreativitas • Teknologi • Dunia kerja</p></div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat"><strong>8</strong><span>Program keahlian</span></div>
+            <div class="stat"><strong>1</strong><span>Portal informasi terpadu</span></div>
+            <div class="stat"><strong>∞</strong><span>Peluang untuk berkembang</span></div>
+            <div class="stat"><strong>24/7</strong><span>Akses informasi online</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="profil">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Profil sekolah</div><h2>Mengenal SMKN 1 Sumenep</h2></div><p>Ruang informasi utama untuk mengenalkan identitas sekolah, visi-misi, kepala sekolah, dan karakter pendidikan vokasi.</p></div>
+        <div class="about-grid">
+          <div class="panel">
+            <h3>Tentang Sekolah</h3>
+            <p>SMKN 1 Sumenep adalah lingkungan pendidikan kejuruan yang berfokus pada pengembangan keterampilan, karakter, kreativitas, dan kesiapan siswa menghadapi dunia kerja maupun pendidikan lanjutan.</p>
+            <div class="vm-grid">
+              <div class="vm"><strong>Visi</strong><span>Mewujudkan lulusan yang kompeten, berkarakter, kreatif, adaptif, dan siap bersaing.</span></div>
+              <div class="vm"><strong>Misi</strong><span>Menguatkan pembelajaran praktik, teknologi, budaya prestasi, serta kemitraan dengan dunia kerja.</span></div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="quote">“Pendidikan vokasi bukan hanya tentang menguasai teori, tetapi tentang berani berkarya dan siap menghadapi perubahan.”</div>
+            <div class="principal"><div class="avatar">HZS</div><div><strong>H. Zainul Sahari, S.Pd., M.Pd.</strong><span>Kepala Sekolah SMKN 1 Sumenep</span></div></div>
+            <div class="actions" style="margin-top:20px"><button class="btn btn-primary" data-open="sambutan">Baca Sambutan</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="jurusan" style="background:#f8faf7">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Program keahlian</div><h2>8 Jurusan, Banyak Jalan Menuju Masa Depan</h2></div><p>Pilih bidang sesuai minat: administrasi, keuangan, bisnis digital, teknologi, industri kreatif, hospitality, hingga fashion.</p></div>
+        <div class="search-row"><input id="majorSearch" type="search" placeholder="Cari jurusan..." aria-label="Cari jurusan"><span class="filter-note" id="majorCount">8 jurusan tersedia</span></div>
+        <div class="program-grid" id="programGrid">
+          <article class="program-card" data-major="Manajemen Perkantoran"><div class="program-icon">🏢</div><h3>Manajemen Perkantoran</h3><p>Administrasi, pelayanan, dokumen, pengelolaan kantor, dan keterampilan komunikasi profesional.</p><button class="link-btn" data-open="major" data-major-name="Manajemen Perkantoran">Pelajari jurusan →</button></article>
+          <article class="program-card" data-major="Akuntansi"><div class="program-icon">📊</div><h3>Akuntansi</h3><p>Pembukuan, pengelolaan transaksi, laporan keuangan, dan administrasi keuangan.</p><button class="link-btn" data-open="major" data-major-name="Akuntansi">Pelajari jurusan →</button></article>
+          <article class="program-card" data-major="Bisnis Digital"><div class="program-icon">📱</div><h3>Bisnis Digital</h3><p>Bisnis, pemasaran digital, e-commerce, branding, dan pemanfaatan teknologi untuk usaha.</p><button class="link-btn" data-open="major" data-major-name="Bisnis Digital">Pelajari jurusan →</button></article>
+          <article class="program-card" data-major="Teknik Komputer dan Jaringan (TKJ)"><div class="program-icon">🌐</div><h3>Teknik Komputer & Jaringan (TKJ)</h3><p>Komputer, jaringan, perangkat, troubleshooting, dan infrastruktur teknologi informasi.</p><button class="link-btn" data-open="major" data-major-name="Teknik Komputer dan Jaringan (TKJ)">Pelajari jurusan →</button></article>
+          <article class="program-card" data-major="Rekayasa Perangkat Lunak (RPL)"><div class="program-icon">💻</div><h3>Rekayasa Perangkat Lunak (RPL)</h3><p>Pemrograman, basis data, pengembangan aplikasi, website, dan perangkat lunak.</p><button class="link-btn" data-open="major" data-major-name="Rekayasa Perangkat Lunak (RPL)">Pelajari jurusan →</button></article>
+          <article class="program-card" data-major="Produksi Film"><div class="program-icon">🎬</div><h3>Produksi Film</h3><p>Konsep cerita, kamera, produksi, editing, video, dan konten kreatif.</p><button class="link-btn" data-open="major" data-major-name="Produksi Film">Pelajari jurusan →</button></article>
+          <article class="program-card" data-major="Perhotelan"><div class="program-icon">🏨</div><h3>Perhotelan</h3><p>Hospitality, pelayanan tamu, front office, housekeeping, dan budaya layanan profesional.</p><button class="link-btn" data-open="major" data-major-name="Perhotelan">Pelajari jurusan →</button></article>
+          <article class="program-card" data-major="Desain dan Produksi Busana (DPB)"><div class="program-icon">👗</div><h3>Desain & Produksi Busana (DPB)</h3><p>Desain busana, pola, jahit, styling, dan proses produksi karya fashion.</p><button class="link-btn" data-open="major" data-major-name="Desain dan Produksi Busana (DPB)">Pelajari jurusan →</button></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-band">
+      <div class="container">
+        <div class="section-head" style="margin-bottom:26px"><div><div class="kicker" style="color:var(--yellow)">Keunggulan</div><h2 style="color:#fff">Mengapa memilih SMKN 1 Sumenep?</h2></div><p style="color:#c9dbce">Kombinasi keterampilan, karakter, kreativitas, dan pengalaman belajar yang relevan dengan kebutuhan masa depan.</p></div>
+        <div class="feature-grid">
+          <div class="feature"><div>🎓</div><b>Pendidikan Vokasi</b><span>Fokus pada kompetensi yang dapat dipraktikkan.</span></div>
+          <div class="feature"><div>💡</div><b>Kreativitas</b><span>Ruang untuk berkarya dan membangun portofolio.</span></div>
+          <div class="feature"><div>🏆</div><b>Budaya Prestasi</b><span>Apresiasi terhadap pencapaian akademik maupun nonakademik.</span></div>
+          <div class="feature"><div>🤝</div><b>Kesiapan Kerja</b><span>Penguatan soft skill, hard skill, dan pengalaman praktis.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="berita">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Kabar sekolah</div><h2>Berita & Prestasi Terbaru</h2></div><p>Ruang untuk mempublikasikan kegiatan, prestasi, dan kabar terbaru sekolah.</p></div>
+        <div class="news-grid">
+          <article class="news-card"><div class="news-image"><img src="assets/kegiatan-prestasi.jpeg" alt="Dokumentasi kegiatan dan prestasi sekolah"></div><div class="content"><span class="tag red">Prestasi</span><h3>SMEKSA Juara — Dokumentasi Prestasi Siswa</h3><p>Gunakan area ini untuk menampilkan cerita lengkap dari prestasi siswa atau tim sekolah.</p><span class="date">Contoh konten • Perbarui dari dashboard admin</span></div></article>
+          <article class="news-card"><div class="news-image"><img src="assets/kegiatan-prestasi.jpeg" alt="Kegiatan siswa"></div><div class="content"><span class="tag">Kegiatan</span><h3>Aktivitas Siswa & Kegiatan Kreatif</h3><p>Publikasikan kegiatan kelas, organisasi, lomba, projek, kunjungan, dan event sekolah.</p><span class="date">Contoh konten • Perbarui dari dashboard admin</span></div></article>
+          <article class="news-card"><div class="news-image"><img src="assets/logo-smkn1-sumenep.jpeg" alt="Logo sekolah"></div><div class="content"><span class="tag">Pengumuman</span><h3>Informasi Penting Sekolah</h3><p>Tempat untuk pengumuman jadwal, pendaftaran, agenda akademik, dan informasi layanan.</p><span class="date">Contoh konten • Perbarui dari dashboard admin</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="agenda" style="background:#f8faf7">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Agenda</div><h2>Agenda Sekolah</h2></div><p>Kalender ringkas kegiatan yang perlu diketahui siswa, orang tua, dan calon peserta didik.</p></div>
+        <div class="agenda-grid">
+          <article class="agenda-item"><div class="date-box"><strong>01</strong><span>AGENDA</span></div><div><h3>PPDB & Sosialisasi</h3><p>Tempatkan jadwal resmi PPDB, sosialisasi jurusan, dan konsultasi calon siswa di sini.</p></div></article>
+          <article class="agenda-item"><div class="date-box"><strong>02</strong><span>AGENDA</span></div><div><h3>Workshop / Projek Siswa</h3><p>Masukkan kegiatan praktik, workshop, pameran, atau pembekalan dunia kerja.</p></div></article>
+          <article class="agenda-item"><div class="date-box"><strong>03</strong><span>AGENDA</span></div><div><h3>Lomba & Kompetisi</h3><p>Rangkum jadwal lomba sekolah, persiapan kompetisi, dan agenda prestasi.</p></div></article>
+          <article class="agenda-item"><div class="date-box"><strong>04</strong><span>AGENDA</span></div><div><h3>Ujian & Kegiatan Akademik</h3><p>Tempatkan agenda ujian, asesmen, dan kegiatan pembelajaran penting lainnya.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeri">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Galeri</div><h2>Dokumentasi Kegiatan</h2></div><p>Galeri visual untuk memperkuat identitas sekolah dan memperlihatkan aktivitas nyata siswa.</p></div>
+        <div class="gallery">
+          <figure data-gallery="Kegiatan & prestasi siswa"><img src="assets/kegiatan-prestasi.jpeg" alt="Kegiatan dan prestasi siswa"><figcaption>Kegiatan & prestasi siswa</figcaption></figure>
+          <figure data-gallery="Identitas sekolah"><img src="assets/logo-smkn1-sumenep.jpeg" alt="Logo SMKN 1 Sumenep"><figcaption>Identitas SMKN 1 Sumenep</figcaption></figure>
+          <figure data-gallery="Referensi konsep website"><img src="assets/referensi-konsep.jpg" alt="Referensi konsep website"><figcaption>Referensi konsep & struktur</figcaption></figure>
+          <figure data-gallery="Kegiatan sekolah"><img src="assets/kegiatan-prestasi.jpeg" alt="Kegiatan sekolah"><figcaption>Dokumentasi kegiatan</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="ppdb" id="ppdb">
+      <div class="container ppdb-grid">
+        <div class="panel">
+          <div class="kicker">Penerimaan peserta didik baru</div>
+          <h2 style="font-size:42px;line-height:1.1;margin:8px 0 12px">Siap menjadi bagian dari SMKN 1 Sumenep?</h2>
+          <p>Portal PPDB disiapkan sebagai pintu masuk utama calon siswa untuk mengenal jurusan, membaca syarat, mengisi formulir, dan mengikuti proses pendaftaran.</p>
+          <div class="check-list">
+            <div class="check"><i>✓</i><span>Informasi dan persyaratan PPDB</span></div>
+            <div class="check"><i>✓</i><span>Form pendaftaran online</span></div>
+            <div class="check"><i>✓</i><span>Kontak bantuan / admin PPDB</span></div>
+            <div class="check"><i>✓</i><span>Ruang untuk cek status pendaftaran</span></div>
+          </div>
+          <button class="btn btn-primary" data-open="ppdbForm">Buka Form PPDB</button>
+        </div>
+        <div class="panel">
+          <h3>Ringkasan Alur PPDB</h3>
+          <div class="check-list">
+            <div class="check"><i>1</i><span>Pilih jurusan sesuai minat.</span></div>
+            <div class="check"><i>2</i><span>Baca syarat dan jadwal resmi.</span></div>
+            <div class="check"><i>3</i><span>Isi formulir pendaftaran.</span></div>
+            <div class="check"><i>4</i><span>Kirim data dan simpan nomor pendaftaran.</span></div>
+            <div class="check"><i>5</i><span>Ikuti arahan verifikasi / seleksi dari sekolah.</span></div>
+          </div>
+          <div class="detail-box"><strong>Catatan:</strong><br><span style="color:var(--muted);font-size:13px">Nomor, tanggal, persyaratan, biaya, dan jadwal PPDB pada template ini sengaja dibuat generik. Ganti dengan informasi resmi sekolah sebelum dipublikasikan.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Kontak</div><h2>Hubungi Sekolah</h2></div><p>Temukan alamat, nomor telepon, dan email resmi SMKN 1 Sumenep.</p></div>
+        <div class="contact-grid">
+          <div class="panel">
+            <h3>Informasi Kontak</h3>
+            <div class="contact-cards">
+              <div class="contact-card"><strong>📍 Alamat</strong><span>Jl. Trunojoyo No. 298, Panitian Selatan, Patean, Batuan, Sumenep 69417</span></div>
+              <div class="contact-card"><strong>☎️ Telepon</strong><span><a href="tel:08328664107">0832-8664-107</a></span></div>
+              <div class="contact-card"><strong>✉️ Email</strong><span><a href="mailto:info@smk1sumenep.sch.id">info@smk1sumenep.sch.id</a></span></div>
+              <div class="contact-card"><strong>💬 WhatsApp</strong><span>Hubungi melalui nomor sekolah jika layanan WhatsApp tersedia.</span></div>
+              <div class="contact-card"><strong>📷 Instagram</strong><span>Tambahkan akun media sosial resmi.</span></div>
+              <div class="contact-card"><strong>▶️ YouTube</strong><span>Tambahkan kanal video resmi.</span></div>
+            </div>
+          </div>
+          <div class="map-box"><div><div style="font-size:52px">📍</div><h3>Lokasi Sekolah</h3><p style="color:var(--muted)">Jl. Trunojoyo No. 298, Panitian Selatan, Patean, Batuan, Sumenep 69417</p><div class="actions" style="justify-content:center;margin-top:16px"><a class="btn" style="background:var(--green-800);color:#fff" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=SMKN+1+Sumenep%2C+Jl.+Trunojoyo+No.+298%2C+Patean%2C+Batuan%2C+Sumenep%2C+Jawa+Timur+69417">Buka Google Maps</a><button class="btn" style="background:#e9f5df;color:var(--green-900)" data-open="contactForm">Kirim Pesan</button></div></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><img src="assets/logo-smkn1-sumenep.jpeg" alt="Logo SMKN 1 Sumenep"><div><strong style="color:#fff">SMKN 1 SUMENEP</strong><div style="font-size:11px">Website Sekolah Terpadu</div></div></div>
+          <p style="margin-top:14px">Portal informasi SMKN 1 Sumenep untuk profil, jurusan, berita, prestasi, galeri, dan PPDB.</p><p style="margin-top:10px;font-size:13px">Jl. Trunojoyo No. 298, Panitian Selatan, Patean, Batuan, Sumenep 69417<br>Telp. 0832-8664-107<br>info@smk1sumenep.sch.id</p>
+        </div>
+        <div><h4>Profil</h4><ul><li><a href="#profil">Tentang Sekolah</a></li><li><a href="#profil">Visi & Misi</a></li><li><a href="#profil">Sambutan Kepala Sekolah</a></li></ul></div>
+        <div><h4>Informasi</h4><ul><li><a href="#berita">Berita</a></li><li><a href="#agenda">Agenda</a></li><li><a href="#galeri">Galeri</a></li><li><a href="#ppdb">PPDB</a></li></ul></div>
+        <div><h4>Jurusan</h4><ul><li><a href="#jurusan">Manajemen Perkantoran</a></li><li><a href="#jurusan">Akuntansi</a></li><li><a href="#jurusan">Bisnis Digital</a></li><li><a href="#jurusan">TKJ • RPL • Film • Hotel • DPB</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 SMKN 1 Sumenep. Semua hak dilindungi.</span><span>Jl. Trunojoyo No. 298 • Sumenep 69417</span></div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Kembali ke atas">↑</button>
+
+  <div class="modal" id="modal">
+    <div class="modal-card" id="modalContent"></div>
+  </div>
+
+  <script>
+    const menu = document.getElementById('menu');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modalContent');
+    const toTop = document.getElementById('toTop');
+
+    mobileToggle.addEventListener('click',()=>menu.classList.toggle('open'));
+    document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+
+    const majorDetails = {
+      'Manajemen Perkantoran': ['Administrasi, pelayanan, komunikasi profesional, pengelolaan dokumen, dan sistem kerja kantor.', ['Administrasi perkantoran','Korespondensi & komunikasi','Pengelolaan arsip','Layanan pelanggan']],
+      'Akuntansi': ['Pembukuan, transaksi, penyusunan laporan, dan dasar pengelolaan keuangan.', ['Siklus akuntansi','Jurnal & buku besar','Laporan keuangan','Administrasi keuangan']],
+      'Bisnis Digital': ['Pemasaran digital, bisnis online, branding, e-commerce, dan pengelolaan konten.', ['Digital marketing','E-commerce','Branding & konten','Analisis bisnis dasar']],
+      'Teknik Komputer dan Jaringan (TKJ)': ['Perangkat komputer, jaringan, instalasi, konfigurasi, dan troubleshooting.', ['Hardware & software','Jaringan dasar','Konfigurasi perangkat','Troubleshooting']],
+      'Rekayasa Perangkat Lunak (RPL)': ['Pemrograman dan pengembangan aplikasi, website, basis data, dan perangkat lunak.', ['Algoritma & coding','Web & aplikasi','Basis data','Pengujian perangkat lunak']],
+      'Produksi Film': ['Proses kreatif dan teknis untuk menghasilkan film, video, dan konten audiovisual.', ['Pra-produksi','Kamera & audio','Editing','Publikasi konten']],
+      'Perhotelan': ['Hospitality, pelayanan tamu, front office, housekeeping, dan budaya layanan.', ['Front office','Housekeeping','Guest service','Etika hospitality']],
+      'Desain dan Produksi Busana (DPB)': ['Desain dan produksi busana dari ide, pola, teknik jahit, hingga penyelesaian karya.', ['Desain busana','Pembuatan pola','Teknik jahit','Produksi & styling']]
+    };
+
+    function openModal(type, extra=''){
+      let html='';
+      if(type==='major'){
+        const d=majorDetails[extra];
+        html=`<button class="modal-close" data-close>×</button><h3>${extra}</h3><p>${d[0]}</p><div class="detail-box"><strong>Contoh kompetensi:</strong><ul>${d[1].map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="actions" style="margin-top:18px"><a class="btn btn-primary" href="#ppdb" data-close>Minat jurusan ini</a></div>`;
+      } else if(type==='sambutan'){
+        html=`<button class="modal-close" data-close>×</button><h3>Sambutan Kepala Sekolah</h3><p>Selamat datang di website SMKN 1 Sumenep. Portal ini dirancang agar siswa, orang tua, calon peserta didik, dan masyarakat dapat menemukan informasi sekolah dengan cepat.</p><p>Silakan gunakan menu Profil, Program Keahlian, Berita, Agenda, Galeri, dan PPDB untuk mengenal sekolah lebih jauh.</p><div class="detail-box"><strong>Tempat sambutan resmi</strong><br><span style="color:var(--muted);font-size:13px">Ganti teks contoh ini dengan sambutan kepala sekolah yang sebenarnya.</span></div>`;
+      } else if(type==='ppdbForm'){
+        html=`<button class="modal-close" data-close>×</button><h3>Form PPDB Online</h3><p>Form demo untuk struktur pendaftaran. Hubungkan ke backend/database sebelum digunakan secara resmi.</p><div id="ppdbSuccess" class="success">Pendaftaran demo berhasil dicatat di sisi halaman ini. Untuk produksi, hubungkan form ke server/database.</div><form id="ppdbForm"><div><label>Nama Lengkap</label><input required name="nama" placeholder="Nama calon siswa"></div><div><label>Asal Sekolah</label><input required name="asal" placeholder="SMP/MTs"></div><div><label>Pilihan Jurusan</label><select required name="jurusan"><option value="">Pilih jurusan</option>${Object.keys(majorDetails).map(x=>`<option>${x}</option>`).join('')}</select></div><div><label>No. WhatsApp</label><input required name="wa" placeholder="08xxxxxxxxxx"></div><button class="btn btn-primary" type="submit">Kirim Pendaftaran Demo</button></form>`;
+      } else if(type==='contactForm'){
+        html=`<button class="modal-close" data-close>×</button><h3>Kirim Pesan</h3><p>Form kontak sederhana untuk menampung pertanyaan pengunjung.</p><div id="contactSuccess" class="success">Pesan demo berhasil dikirim. Hubungkan form ke email/WhatsApp/API saat deployment.</div><form id="contactForm"><div><label>Nama</label><input required name="nama"></div><div><label>Email / WhatsApp</label><input required name="kontak"></div><div><label>Pesan</label><textarea required name="pesan" placeholder="Tulis pertanyaan..."></textarea></div><button class="btn btn-primary" type="submit">Kirim Pesan Demo</button></form>`;
+      }
+      modalContent.innerHTML=html;
+      modal.classList.add('open');
+      modalContent.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeModal));
+      const ppdbForm=document.getElementById('ppdbForm');
+      if(ppdbForm) ppdbForm.addEventListener('submit',e=>{e.preventDefault();document.getElementById('ppdbSuccess').classList.add('show');ppdbForm.reset();});
+      const contactForm=document.getElementById('contactForm');
+      if(contactForm) contactForm.addEventListener('submit',e=>{e.preventDefault();document.getElementById('contactSuccess').classList.add('show');contactForm.reset();});
+    }
+    function closeModal(){modal.classList.remove('open');}
+    document.addEventListener('click',e=>{
+      const open=e.target.closest('[data-open]');
+      if(open) openModal(open.dataset.open,open.dataset.majorName||'');
+    });
+    modal.addEventListener('click',e=>{if(e.target===modal) closeModal();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+    const search=document.getElementById('majorSearch');
+    const cards=[...document.querySelectorAll('.program-card')];
+    const count=document.getElementById('majorCount');
+    search.addEventListener('input',()=>{const q=search.value.toLowerCase().trim();let shown=0;cards.forEach(c=>{const ok=c.dataset.major.toLowerCase().includes(q);c.style.display=ok?'block':'none';if(ok)shown++;});count.textContent=`${shown} jurusan ditampilkan`;});
+
+    document.querySelectorAll('.gallery figure').forEach(fig=>fig.addEventListener('click',()=>{
+      modalContent.innerHTML=`<button class="modal-close" data-close>×</button><h3>${fig.dataset.gallery}</h3><img src="${fig.querySelector('img').src}" alt="${fig.dataset.gallery}" style="width:100%;border-radius:18px;margin-top:12px"><p style="margin-top:12px">Dokumentasi dari materi visual yang tersedia pada website ini.</p>`;
+      modal.classList.add('open');modalContent.querySelector('[data-close]').addEventListener('click',closeModal);
+    }));
+
+    window.addEventListener('scroll',()=>{toTop.classList.toggle('show',window.scrollY>500)});
+    toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  </script>
+</body>
+</html>
